@@ -1,13 +1,27 @@
-<h1> Welcome to MSM! </h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<div class = "row">
-  <a href="/directors"> Directors </a>
-</div>
-
-<div class="row">
-  <a href="/actors"> Actors </a>
-</div>
-
-<div class="row">
-  <a href="/movies"> Movies </a>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-sm-offset-1">
+      <h1>Welcome to MSM </h1>
+      <p>Click on the headings to see each of your lists. The first entry from each appears below.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-1 col-sm-3 text-center">
+      <a href="/directors"> <font color="black"> <h2>Directors</h2></font></a>
+      <img src= "<%= Director.first.image_url %>">
+      <h3> <%= Director.first.name %> </h3>
+    </div>
+    <div class="col-sm-offset-1 col-sm-3 text-center">
+      <a href="/actors"> <font color="black"> <h2>Actors</h2></font> </a>
+      <img src= "<%= Actor.first.image_url %>">
+      <h3> <%= Actor.first.name %> </h3>
+    </div>
+    <div class="col-sm-offset-1 col-sm-3 text-center">
+      <a href="/movies"> <font color="black"> <h2>Movies</h2></font> </a>
+      <img src= "<%= Movie.first.image_url %>">
+      <h3> <%= Movie.first.title %> </h3>
+    </div>
+  </div>
 </div>
