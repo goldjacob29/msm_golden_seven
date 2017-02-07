@@ -1,6 +1,6 @@
 <h1> Directors </h1>
 
-<a href="/directors/new_form"> Add a Director </a>
+<a href="/directors/director_new_form"> Add a Director </a>
 
 <% @list_of_directors.each do |director| %>
 <h2> <%= director.name %></h2>
@@ -8,6 +8,7 @@
 <h3>Born</h3> <p><%= director.dob %></p>
 <img src="<%= director.image_url %>">
 <h3>Bio</h3> <p> <%= director.bio %></p>
+<a href="/directors/<%= director.id %>/edit_form">Edit</a>
 <a href="/delete_director/<%= director.id %>">Delete</a>
 
 <% end %>
