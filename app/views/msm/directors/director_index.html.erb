@@ -1,24 +1,35 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<div class="container text-center">
-  <div class="row">
+<div class="container">
+  <div class="row text-center">
     <h1> Directors </h1>
     <a href="/directors/director_new_form"> Add a Director </a>
   </div>
 
+  <% @list_of_directors.each do |director| %>
   <div class="row">
-    <% @list_of_directors.each do |director| %>
-    <h2> <%= director.name %></h2>
-    <a href="/directors/<%= director.id %>"> Show </a>
-    <h3>Born</h3> <p><%= director.dob %></p>
-    <img src="<%= director.image_url %>">
-    <h3>Bio</h3> <p class="lead"> <%= director.bio %></p>
-    <a href="/directors/<%= director.id %>/edit_form">Edit</a>
-    <a href="/delete_director/<%= director.id %>">Delete</a>
-    <% end %>
+    <div class="row col-md-6">
+      <h2> <%= director.name %></h2>
+      <a href="/directors/<%= director.id %>"> Show </a>
+      <a href="/directors/<%= director.id %>/edit_form">Edit</a>
+      <a href="/delete_director/<%= director.id %>">Delete</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row col-md-6">
+      <h3>Born</h3> <p><%= director.dob %></p>
+      <img src="<%= director.image_url %>" width="350px">
+    </div>
+    <div class="row col-md-6">
+      <h3>Bio</h3> <p class="lead"> <%= director.bio %></p>
+    </div>
   </div>
 
-  <div class="row">
+
+  <% end %>
+
+</div>
+
+  <div class="row text-center">
     <a href="/">Home</a>
   </div>
-</div>

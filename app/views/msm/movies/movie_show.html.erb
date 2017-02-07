@@ -5,8 +5,9 @@
   </div>
   <h2> <%= @m.title %></h2>
   <h3>Year</h3> <p><%= @m.year %></p>
-  <img src="<%= @m.image_url %>">
   <h3>Duration</h3> <p> <%= "#{@m.duration} minutes" %></p>
+  <img src="<%= @m.image_url %>">
+
   <h3>Description</h3> <p class="lead"> <%= @m.description %></p>
 
   <a href="/movies">Back </a>
