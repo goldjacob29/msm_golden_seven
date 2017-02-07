@@ -1,16 +1,24 @@
-<h1> Actors </h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<a href="/actors/actor_new_form"> Add an Actor </a>
+<div class="container text-center">
+  <div class="row">
+    <h1> Actors </h1>
+    <a href="/actors/actor_new_form"> Add an Actor </a>
+  </div>
 
-<% @list_of_actors.each do |actor| %>
-<h2> <%= actor.name %></h2>
-<a href="/actors/<%= actor.id %>"> Show </a>
-<h3>Born</h3> <p><%= actor.dob %></p>
-<img src="<%= actor.image_url %>">
-<h3>Bio</h3> <p> <%= actor.bio %></p>
-<a href="/actors/<%= actor.id %>/edit_form">Edit</a>
-<a href="/delete_actor/<%= actor.id %>">Delete</a>
+  <div class="row">
+    <% @list_of_actors.each do |actor| %>
+    <h2> <%= actor.name %></h2>
+    <a href="/actors/<%= actor.id %>"> Show </a>
+    <h3>Born</h3> <p><%= actor.dob %></p>
+    <img src="<%= actor.image_url %>">
+    <h3>Bio</h3> <p class="lead"> <%= actor.bio %></p>
+    <a href="/actors/<%= actor.id %>/edit_form">Edit</a>
+    <a href="/delete_actor/<%= actor.id %>">Delete</a>
+    <% end %>
+  </div>
 
-<% end %>
-<div>
-<a href="/">Home</a>
+  <div class="row">
+    <a href="/">Home</a>
+  </div>
+</div>

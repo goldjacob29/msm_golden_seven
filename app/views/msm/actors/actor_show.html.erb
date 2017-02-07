@@ -1,10 +1,16 @@
-<h1> Actor Details </h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<h2> <%= @a.name %></h2>
-<h3>Born</h3> <p><%= @a.dob %></p>
-<img src="<%= @a.image_url %>">
-<h3>Bio</h3> <p> <%= @a.bio %></p>
+<div class="container text-center">
+  <div class="row">
+    <h1> Actor Details </h1>
+  </div>
 
-<a href="/actors">Back </a>
-<a href="/actors/<%= @a.id %>/edit_form">Edit</a>
-<a href="/delete_actor/<%= @a.id %>">Delete</a>
+  <h2> <%= @a.name %></h2>
+  <h3>Born</h3> <p><%= @a.dob %></p>
+  <img src="<%= @a.image_url %>">
+  <h3>Bio</h3> <p class="lead"> <%= @a.bio %></p>
+
+  <a href="/actors">Back </a>
+  <a href="/actors/<%= @a.id %>/edit_form">Edit</a>
+  <a href="/delete_actor/<%= @a.id %>">Delete</a>
+</div>

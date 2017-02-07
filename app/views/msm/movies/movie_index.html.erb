@@ -1,17 +1,24 @@
-<h1> Movies </h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<a href="/movies/movie_new_form"> Add a Movie </a>
+<div class="container text-center">
+  <div class="row">
+    <h1> Movies </h1>
+    <a href="/movies/movie_new_form"> Add a Movie </a>
+  </div>
 
-<% @list_of_movies.each do |movie| %>
-<h2> <%= movie.title %></h2>
-<a href="/movies/<%= movie.id %>"> Show </a>
-<h3>Year</h3> <p><%= movie.year %></p>
-<img src="<%= movie.image_url %>">
-<h3>Duration</h3> <p> <%= "#{movie.duration} minutes" %></p>
-<h3>Description</h3> <p> <%= movie.description %></p>
-<a href="/movies/<%= movie.id %>/edit_form">Edit</a>
-<a href="/delete_movie/<%= movie.id %>">Delete</a>
-
-<% end %>
-<div>
-<a href="/">Home</a>
+  <div class="row">
+    <% @list_of_movies.each do |movie| %>
+    <h2> <%= movie.title %></h2>
+    <a href="/movies/<%= movie.id %>"> Show </a>
+    <h3>Year</h3> <p><%= movie.year %></p>
+    <img src="<%= movie.image_url %>">
+    <h3>Duration</h3> <p> <%= "#{movie.duration} minutes" %></p>
+    <h3>Description</h3> <p class="lead"> <%= movie.description %></p>
+    <a href="/movies/<%= movie.id %>/edit_form">Edit</a>
+    <a href="/delete_movie/<%= movie.id %>">Delete</a>
+    <% end %>
+  </div>
+  <div class="row">
+    <a href="/">Home</a>
+  </div>
+</div>
