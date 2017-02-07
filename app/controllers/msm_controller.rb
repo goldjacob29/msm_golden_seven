@@ -147,7 +147,7 @@ class MsmController < ApplicationController
   end
 
   def movie_create
-    m = Actor.new
+    m = Movie.new
     m.title = params[:title]
     m.year = params[:year]
     m.duration = params[:duration]
