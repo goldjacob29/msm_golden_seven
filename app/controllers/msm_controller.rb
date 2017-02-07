@@ -125,7 +125,58 @@ class MsmController < ApplicationController
 
   def movie_index
 
+    @list_of_movies = Movie.all
     render("/msm/movies/movie_index.html.erb")
+
+  end
+
+  def movie_show
+    @m = Movie.find_by({:id => params[:id]})
+    render("/msm/movies/movie_show.html.erb")
+  end
+
+  def movie_delete
+    m = Movie.find_by({:id => params[:id]})
+    m.destroy
+    redirect_to("/movies")
+  end
+
+  def movie_add
+    render("/msm/movies/movie_new_form.html.erb")
+
+  end
+
+  def movie_create
+    m = Actor.new
+    m.title = params[:title]
+    m.year = params[:year]
+    m.duration = params[:duration]
+    m.description = params[:description]
+    m.image_url = params[:image_url]
+    m.save
+
+    redirect_to("/movies/#{m.id}")
+  end
+
+  def movie_edit
+
+    @m = Movie.find_by({:id => params[:id]})
+
+    render("/msm/movies/movie_edit.html.erb")
+
+  end
+
+  def movie_update
+
+    m = Movie.find_by({:id => params[:id]})
+    m.title = params[:title]
+    m.year = params[:year]
+    m.duration = params[:duration]
+    m.description = params[:description]
+    m.image_url = params[:image_url]
+    m.save
+
+    redirect_to("/movies/#{m.id}")
 
   end
 

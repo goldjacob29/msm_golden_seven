@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 
   # Actors
 
-  get("/actors", { :controller => "msm", :action => "actor_index" })
-
   get("/actors/actor_new_form", { :controller => "msm", :action => "actor_add"})
   get("/actors/actor_create", { :controller => "msm", :action => "actor_create"})
 
@@ -34,6 +32,15 @@ Rails.application.routes.draw do
 
   # Movies
 
+  get("/movies/movie_new_form", { :controller => "msm", :action => "movie_add"})
+  get("/movies/movie_create", { :controller => "msm", :action => "movie_create"})
+
+  get("/movies/:id/edit_form", { :controller => "msm", :action => "movie_edit"})
+  get("/movies/movie_update/:id", { :controller => "msm", :action => "movie_update"})
+
   get("/movies", { :controller => "msm", :action => "movie_index" })
+  get("/movies/:id", { :controller => "msm", :action => "movie_show" })
+
+  get("/delete_movie/:id", { :controller => "msm", :action => "movie_delete"})
 
 end
